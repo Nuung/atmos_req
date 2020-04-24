@@ -22,14 +22,14 @@
 
             vars = getUrlVars()
 
-            // if (vars) {
-            //         $("input[name=brandcode]").val(vars.code);
-            //         $("input[name=branduid]").val(vars.id);
-            // 		$("input[id=size]").val(vars.size);
-            // 		$("input[id=index]").val(vars.index);
-            //         $('#form').attr('action', 'http://www.atmos-seoul.com/shop/basket.html');
-            //         $('#form').submit();
-            // }
+            if (vars) {
+                    $("input[name=brandcode]").val(vars.code);
+                    $("input[name=branduid]").val(vars.id);
+            		$("input[id=size]").val(vars.size);
+            		$("input[id=index]").val(vars.index);
+                    $('#form').attr('action', 'http://www.atmos-seoul.com/shop/basket.html');
+                    $('#form').submit();
+            }
     })
     </script>
 </head>
@@ -37,13 +37,31 @@
     <h1>AmnotifyKR</h1>
     <img src="./logo.png">
 
-    <!-- <form name="form" id="form" action="http://www.atmos-seoul.com/shop/basket.html" method="post">
-		<input hidden name="xcode" value="003">
-		<input hidden name="mcode" value="001">
-		<input hidden name="typep" value="X">
+    <form name="form" id="form" action="http://www.atmos-seoul.com/shop/basket.html" method="post">
+        <input hidden name="collbasket" value=>
+        <input hidden name="totalnum" value="3">
+        <input hidden name="spcode" value=>
+        <input hidden name="spcode2" value=>
+        <input hidden name="quantity" value=>
+        <input hidden name="collbrandcode" value=>
+        <input hidden name="aramount" value=>
+        <input hidden name="arspcode" value=>
+        <input hidden name="arspcode2" value=>
+        <input hidden name="optionindex" value=>
+        <input hidden name="alluid" value=>
+        <input hidden name="alloptiontype" value=>
+        <input hidden name="aropts" value=>
+        <input hidden name="checktype" value=>
+        <input hidden name="ordertype" value=>
+        <input hidden name="allpackageuid" value=>
+        <input hidden name="cart_free" value=>
 		<input hidden name="ordertype" value="baro|parent.|layer">
 		<input hidden name="brandcode" value="">
-		<input hidden name="branduid" value="">
+        <input hidden name="branduid" value="">
+        <input hidden name="xcode" value="003">
+		<input hidden name="mcode" value="001">
+        <input hidden name="typep" value="Y">
+        <input hidden name="collbasket_type" value="Y">
 		<input hidden name="opt_type" value="PS">
 		<input hidden name="amount[]" value="1">
 		<input hidden name="option[basic][0][0][opt_id]" value="1">
@@ -51,15 +69,14 @@
 		<input hidden name="option[basic][0][0][opt_stock]" value="1">
 		<input hidden id="index" name="option[basic][0][0][sto_id]" value="">
         
-        <!-- Not need --!>
-        <input hidden name="option[basic][0][1][opt_id]" value="1">
+        <!-- <input hidden name="option[basic][0][1][opt_id]" value="1">
 		<input hidden id="size" name="option[basic][0][1][opt_value]" value="">
 		<input hidden name="option[basic][0][1][opt_stock]" value="1">
 		<input hidden id="index" name="option[basic][0][1][sto_id]" value="">
 		<input  name="_multi_ea[]" value="1">
 		<input  name="multi_ea[]" value="1">
 		<input  name="multi_ea[0][]" value="235">
-		<input  name="multi_ea[0][]" value="">-->
+		<input  name="multi_ea[0][]" value=""> -->
 	</form>
 </body>
 </html>
