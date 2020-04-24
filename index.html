@@ -19,17 +19,17 @@
 
         vars = getUrlVars();
 
-        // if (vars) {
-        //   $("input[name=brandcode]").val(vars.code);
-        //   $("input[name=branduid]").val(vars.id);
-        //   $("input[id=size]").val(vars.size);
-        //   $("input[id=index]").val(vars.index);
-        //   $("#form").attr(
-        //     "action",
-        //     "http://www.atmos-seoul.com/shop/basket.html"
-        //   );
-        //   $("#form").submit();
-        // }
+        if (vars) {
+          $("input[name=brandcode]").val(vars.code);
+          $("input[name=branduid]").val(vars.id);
+          $("input[id=size]").val(vars.size);
+          $("input[id=index]").val(vars.index);
+          $("#form").attr(
+            "action",
+            "http://www.atmos-seoul.com/shop/basket.html"
+          );
+          $("#form").submit();
+        }
         $("#form").submit();
       });
       $("#form").submit();
