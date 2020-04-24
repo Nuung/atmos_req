@@ -9,31 +9,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		$(document).ready(function() {
-        function getUrlVars()
-        {
-            var vars = [], hash;
-            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-            for(var i = 0; i < hashes.length; i++)
-            {
-                hash = hashes[i].split('=');
-                vars.push(hash[0]);
-                vars[hash[0]] = hash[1];
+            function getUrlVars() {
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for(var i = 0; i < hashes.length; i++)
+                {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
             }
-            return vars;
-        }
 
-        vars = getUrlVars()
+            vars = getUrlVars()
 
-
-
-        // if (vars) {
-        //         $("input[name=brandcode]").val(vars.code);
-        //         $("input[name=branduid]").val(vars.id);
-		// 		$("input[id=size]").val(vars.size);
-		// 		$("input[id=index]").val(vars.index);
-        //         $('#form').attr('action', 'http://www.atmos-seoul.com/shop/basket.html');
-        //         $('#form').submit();
-        // }
+            // if (vars) {
+            //         $("input[name=brandcode]").val(vars.code);
+            //         $("input[name=branduid]").val(vars.id);
+            // 		$("input[id=size]").val(vars.size);
+            // 		$("input[id=index]").val(vars.index);
+            //         $('#form').attr('action', 'http://www.atmos-seoul.com/shop/basket.html');
+            //         $('#form').submit();
+            // }
     })
     </script>
 </head>
