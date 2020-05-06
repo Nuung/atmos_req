@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <section id="instagram">
+        </section>
+    </body>
+    <script>
+    // Instagram 게시글 불러오기 
+    const wrapper = document.getElementById("instagram");
+    fetch("https://www.instagram.com/le.syndrome/")
+    .then(a => {
+        return a.text();
+    }).then(a => {
+        const media = JSON.parse(a.slice(a.indexOf("edge_owner_to_timeline_media") + 30, a.indexOf("edge_saved_media") - 2));
+        media.edges.forEach(m => {
+            const node = m.node,
+                div = document.createElement("div"),
+                a = document.createElement("a"),
+                img = document.createElement("img");
+
+            div.className = "instaBox",
+            img.className = "instaImg",
+            a.target="_blank",
+            a.href = `https://www.instagram.com/p/${node.shortcode}/`,
+            img.src = node.display_url,
+            a.append(img),
+            div.append(a),
+            wrapper.append(div)
+        })
+    });
+    </script>
+</html>
