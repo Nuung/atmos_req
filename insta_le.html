@@ -22,6 +22,7 @@
             img.className = "instaImg",
             a.target="_blank",
             a.href = `https://www.instagram.com/p/${node.shortcode}/`,
+            a.text = `${node.edge_media_to_caption.edges[0].node}`,
             img.src = node.display_url,
             a.append(img),
             div.append(a),
