@@ -11,6 +11,7 @@
         return a.text();
     }).then(a => {
         const media = JSON.parse(a.slice(a.indexOf("edge_owner_to_timeline_media") + 30, a.indexOf("edge_saved_media") - 2));
+        console.log(media)
         media.edges.forEach(m => {
             const node = m.node,
                 div = document.createElement("div"),
