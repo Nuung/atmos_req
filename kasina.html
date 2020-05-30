@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    // 모델 넘버 / 가격 / 사이즈script에서 얻어오는 옵션(optionSno)의 값 
+    // 사이즈 / 사이즈에 남은 개수 / displayOptionkey 이게 핵심인데.. 흠 
+        $(document).ready(function () {
+        function getUrlVars() {
+            var vars = [],
+            hash;
+            var hashes = window.location.href
+            .slice(window.location.href.indexOf("?") + 1)
+            .split("&");
+            for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split("=");
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+        vars = getUrlVars();
+
+        if (vars) {
+            $("input[name=brandcode]").val(vars.code);
+            $("input[name=branduid]").val(vars.id);
+            $("input[id=size]").val(vars.size);
+            $("input[id=index]").val(vars.index);
+            $("#form").attr(
+            "action",
+            "http://www.atmos-seoul.com/shop/basket.html"
+            );
+            $("#form").submit();
+        }
+
+        });
+    </script>
+  </head>
+
+  <body style="text-align: center;">
+    <h1>AmnotifyKR - ATMOS</h1>
+    <img src="logo.png">
+    <form
+      name="form"
+      id="form"
+      method="post"
+      action="http://www.kasina.co.kr/order/cart_ps.php"
+    >
+      <input hidden name="mode" value="cartIn" />
+      <input hidden name="scmNo" value="1" />
+      <input hidden name="cartMode" value="d" />
+      <input hidden id="price_one" name="set_goods_price" value="" />
+      <input hidden id="price_one_real" name="set_goods_fixedPrice" value="" />
+      <input hidden name="set_goods_mileage" value="0" />
+      <input hidden id="product_stock" name="set_goods_stock" value="" />
+      <input hidden id="price_two_real" name="set_coupon_dc_price" value="" />
+      <input hidden name="set_goods_total_price" value="0" />
+      <input hidden name="set_option_price" value="0" />
+      <input hidden name="set_option_text_price" value="0" />
+      <input hidden name="set_add_goods_price" value="0" />
+      <input hidden id="price_two" name="set_total_price" value="" />
+      <input hidden name="mileageFl" value="c" />
+      <input hidden name="mileageGoods" value="0.00" />
+      <input hidden name="mileageGoodsUnit" value="percent" />
+      <input hidden name="goodsDiscountFl" value="n" />
+      <input hidden name="goodsDiscount" value="0.00" />
+      <input hidden name="goodsDiscountUnit" value="percent" />
+      <input hidden name="taxFreeFl" value="t" />
+      <input hidden name="taxPercent" value="10.0" />
+      <input hidden name="scmNo" value="1" />
+      <input hidden id="product_brand" name="brandCd" value="" />
+      <input hidden name="cateCd" value="13" />
+      <input hidden name="optionFl" value="y" />
+      <input hidden id="product_id" name="goodsNo[]" value="" />
+      <input hidden id="product_size_id" name="optionSno[]" value="" />
+      <input hidden id="price_three" name="goodsPriceSum[]" value="" />
+      <input hidden name="addGoodsPriceSum[]" value="0" />
+      <input hidden id="displayOptionkey" name="displayOptionkey[]" value="" />
+      <input hidden name="couponApplyNo[]" value="" />
+      <input hidden name="couponSalePriceSum[]" value="" />
+      <input hidden name="couponAddPriceSum[]" value="" />
+      <input hidden name="goodsCnt[]" value="1" />
+      <input hidden id="option_price" name="option_price_128839_1590823724301" value="0" />
+      <input hidden name="optionPriceSum[]" value="0" />
+      <input hidden name="deliveryCollectFl" value="pre" />
+    </form>
+  </body>
+</html>
+
