@@ -3,7 +3,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         // https://nuung.github.io/atmos_req/kasina?id=&price=&branCd=&optionSno=&stock&
-        // https://nuung.github.io/atmos_req/kasina?id=1242663794&price=109,000&branCd=017&optionSno=128837&stock=1
+        // https://nuung.github.io/atmos_req/kasina?id=1242663794&price=109000&branCd=063&optionSno=128839&stock=3
         // 모델 넘버 / 가격 / 사이즈script에서 얻어오는 옵션(optionSno)의 값 / brandCd
         // 사이즈에 남은 개수 / displayOptionkey 이게 핵심인데.. 흠 
         $(document).ready(function () {
@@ -35,7 +35,7 @@
                 $("input[id=product_stock]").val(vars.stock);
                 $("#form").attr(
                     "action",
-                    "http://www.atmos-seoul.com/shop/basket.html"
+                    "http://www.kasina.co.kr/order/cart_ps.php"
                 );
                 $("#form").submit();
             }
