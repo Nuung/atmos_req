@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // make url params to Dict
+            function getUrlVars() {
+                let vars = [], hash;
+                let hashes = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&");
+                for (let i = 0; i < hashes.length; i++) {
+                  hash = hashes[i].split("=");
+                  vars.push(hash[0]);
+                  vars[hash[0]] = hash[1];
+                }
+                return vars;
+            }
+            
+            const vars = getUrlVars();
+
+            if (vars) {
+                const temp = vars.price + ".00";
+                $("input[id=product_id]").val(vars.id);
+                $("input[class=price_one]").val(vars.price);
+                
+                $("input[class=price_one_real]").val(temp);
+                $("input[id=product_brand]").val(vars.brandCd);
+                $("input[id=product_size_id]").val(vars.optionSno);
+                $("input[id=product_stock]").val(vars.stock);
+                $("#form").attr(
+                    "action",
+                    "http://www.hoopcity.co.kr/order/cart_ps.php"
+                );
+                $("#form").submit();
+            }
+
+        });
+    </script>
+  </head>
+
+  <body style="text-align: center;">
+    <h1>AmnotifyKR - HOOPCITY</h1>
+    <img src="logo.png">
+    <form
+      name="form"
+      id="form"
+      method="post"
+      action="http://www.hoopcity.co.kr/order/cart_ps.php"
+    >
+      <input hidden name="mode" value="cartIn" />
+      <input hidden name="scmNo" value="1" />
+      <input hidden name="cartMode" value="d" />
+      <input hidden class="price_one" name="set_goods_price" value="" />
+      <!-- <input hidden class="price_one_real" name="set_goods_fixedPrice" value="" /> -->
+      <input hidden name="set_goods_mileage" value="0" />
+      <input hidden id="product_stock" name="set_goods_stock" value="" />
+      <input hidden class="price_one_real" name="set_coupon_dc_price" value="" />
+      <input hidden name="set_goods_total_price" value="0" />
+      <input hidden name="set_option_price" value="0" />
+      <input hidden name="set_option_text_price" value="0" />
+      <input hidden name="set_add_goods_price" value="0" />
+      <input hidden class="price_one" name="set_total_price" value="" />
+      <input hidden name="mileageFl" value="c" />
+      <input hidden name="mileageGoods" value="0.00" />
+      <input hidden name="mileageGoodsUnit" value="percent" />
+      <input hidden name="goodsDiscountFl" value="n" />
+      <input hidden name="goodsDiscount" value="0.00" />
+      <input hidden name="goodsDiscountUnit" value="percent" />
+      <input hidden name="taxFreeFl" value="t" />
+      <input hidden name="taxPercent" value="10.0" />
+      <input hidden name="scmNo" value="1" />
+      <input hidden id="product_brand" name="brandCd" value="" />
+      <!-- <input hidden name="cateCd" value="13" /> -->
+      <input hidden name="optionFl" value="y" />
+      <input hidden id="product_id" name="goodsNo[]" value="" />
+      <input hidden id="product_size_id" name="optionSno[]" value="" />
+      <input hidden class="price_one" name="goodsPriceSum[]" value="" />
+      <input hidden name="addGoodsPriceSum[]" value="0" />
+      <!-- <input hidden id="displayOptionkey" name="displayOptionkey[]" value="" /> -->
+      <input hidden name="couponApplyNo[]" value="" />
+      <input hidden name="couponSalePriceSum[]" value="" />
+      <input hidden name="couponAddPriceSum[]" value="" />
+      <!-- <input hidden id="option_price" name="option_price_128839_1590823724301" value="0" /> -->
+      <input hidden name="optionPriceSum[]" value="0" />
+      <input hidden name="goodsCnt[]" value="1" />
+      <input hidden name="deliveryCollectFl" value="pre" />
+    </form>
+  </body>
+</html>
+
