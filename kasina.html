@@ -42,7 +42,7 @@
                 $("input[id=product_stock]").val(vars.stock);
                 $("#form").attr(
                     "action",
-                    "https://www.kasina.co.kr/order/cart_ps.php"
+                    "https://www.kasina.co.kr/order/order.php"
                 );
                 $("#form").submit();
             }
@@ -54,7 +54,7 @@
 <body style="text-align: center;">
     <h1>AmnotifyKR - KASINA</h1>
     <img src="logo.png">
-    <form name="form" id="form" method="post" action="https://www.kasina.co.kr/order/cart_ps.php">
+    <form name="form" id="form" method="post" action="https://www.kasina.co.kr/order/order.php">
         <input hidden name="mode" value="cartIn" />
         <input hidden name="scmNo" value="1" />
         <input hidden name="optionSnoInput" value="ssc001" />
